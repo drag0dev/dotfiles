@@ -18,10 +18,12 @@ set colorcolumn=100
 set signcolumn=yes
 set background=dark
 
+let mapleader =  " "
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+nnoremap <leader>ff :lua require('telescope.builtin').find_files()<CR>
 
 call plug#begin('~/.vim/plugged')
 "Plug 'wadackel/vim-dogrun'
@@ -43,13 +45,14 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+
 Plug 'airblade/vim-gitgutter'
+
+Plug 'simrat39/rust-tools.nvim'
+Plug 'mfussenegger/nvim-dap'
 call plug#end()
 
 colorscheme gotham
-
-let mapleader =  " "
-
 
 fun! TrimWhiteSpaces()
     let l:save = winsaveview()
@@ -125,9 +128,7 @@ lua <<EOF
     })
   })
 
-  -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
   require('lspconfig')["bashls"].setup {
     capabilities = capabilities
   }
@@ -158,8 +159,7 @@ lua <<EOF
   require('lspconfig')["sqls"].setup {
     capabilities = capabilities
   }
-  require('lspconfig')["emmet_ls"].setup {
+  require('lspconfig')["rust_analyzer"].setup {
     capabilities = capabilities
   }
 EOF
-

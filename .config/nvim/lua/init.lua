@@ -11,8 +11,10 @@ local servers = {
     "html",
     "zk",
     "sqls",
-    "emmet_ls",
+    "rust_analyzer",
 }
+
+require('rust-tools').setup({})
 
 for _, name in pairs(servers) do
   local server_is_found, server = lsp_installer.get_server(name)
