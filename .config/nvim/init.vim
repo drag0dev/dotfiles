@@ -23,8 +23,16 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
-nnoremap <leader>ff :lua require('telescope.builtin').find_files()<CR>
 
+nnoremap <leader>ff :lua require('telescope.builtin').find_files()<CR>
+nnoremap <leader>d :lua vim.lsp.buf.definition()<CR>
+nnoremap <leader>h :lua vim.lsp.buf.hover()<CR>
+nnoremap <leader>f :lua vim.diagnostic.open_float()<CR>
+nnoremap <leader>r :lua vim.lsp.buf.rename()<CR>
+
+" show empty chars
+set listchars=trail:·
+set list
 call plug#begin('~/.vim/plugged')
 "Plug 'wadackel/vim-dogrun'
 "Plug 'tyrannicaltoucan/vim-deep-space'
@@ -37,7 +45,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'whatyouhide/vim-gotham'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
-Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -50,7 +57,13 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'simrat39/rust-tools.nvim'
 Plug 'mfussenegger/nvim-dap'
+
+"snippets
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
+
+lua require("drago")
 
 colorscheme gotham
 
