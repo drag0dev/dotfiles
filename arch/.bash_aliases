@@ -1,1 +1,0 @@
-alias getgt="cat ~/gittoken"

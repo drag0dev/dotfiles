@@ -17,6 +17,9 @@ set scrolloff=8
 set colorcolumn=100
 set signcolumn=yes
 set background=dark
+set nowrap
+set clipboard+=unnamedplus
+set updatetime=200
 
 let mapleader =  " "
 noremap <Up> <Nop>
@@ -29,6 +32,7 @@ nnoremap <leader>d :lua vim.lsp.buf.definition()<CR>
 nnoremap <leader>h :lua vim.lsp.buf.hover()<CR>
 nnoremap <leader>f :lua vim.diagnostic.open_float()<CR>
 nnoremap <leader>r :lua vim.lsp.buf.rename()<CR>
+nmap [d <Plug>(GitGutterPreviewHunk)
 
 " show empty chars
 set listchars=trail:·
@@ -36,13 +40,15 @@ set list
 call plug#begin('~/.vim/plugged')
 "Plug 'wadackel/vim-dogrun'
 "Plug 'tyrannicaltoucan/vim-deep-space'
-Plug 'vim-airline/vim-airline'
+Plug 'whatyouhide/vim-gotham'
+Plug 'arcticicestudio/nord-vim'
+Plug 'joshdick/onedark.vim'
 
+Plug 'vim-airline/vim-airline'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-Plug 'whatyouhide/vim-gotham'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -58,6 +64,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'simrat39/rust-tools.nvim'
 Plug 'mfussenegger/nvim-dap'
 
+" funny elixir stuff
+Plug 'elixir-editors/vim-elixir'
+
 "snippets
 Plug 'rust-lang/rust.vim'
 
@@ -65,7 +74,9 @@ call plug#end()
 
 lua require("drago")
 
-colorscheme gotham
+colorscheme nord
+syntax on
+filetype plugin indent on
 
 fun! TrimWhiteSpaces()
     let l:save = winsaveview()
@@ -173,6 +184,10 @@ lua <<EOF
     capabilities = capabilities
   }
   require('lspconfig')["rust_analyzer"].setup {
+    capabilities = capabilities
+  }
+  require('lspconfig')["elixirls"].setup {
+    cmd = {"/home/drago/.local/share/nvim/lsp_servers/elixir/elixir-ls/language_server.sh", "elixir-ls"},
     capabilities = capabilities
   }
 EOF
