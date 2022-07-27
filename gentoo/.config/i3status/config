@@ -8,11 +8,15 @@
 
 general {
         colors = true
-        interval = 5
+        interval = 1
 	output_format = i3bar
 }
 
 order += "interet_speeds"
+order += "wireless wlp3s0"
+order += "ethernet enp0s25"
+order += "battery 0"
+order += "cpu_temperature 0"
 order += "disk /"
 order += "memory"
 order += "cpu_usage"
@@ -21,6 +25,33 @@ order += "tztime local"
 
 disk "/" {
         format = "%avail"
+}
+
+wireless wlp3s0 {
+        format_up = "W: (%quality at %essid, %bitrate)"
+        format_down = "W: down"
+}
+
+ethernet enp0s25 {
+        format_up = "E: (%speed)"
+        format_down = "E: down"
+}
+
+
+cpu_temperature 0 {
+    format = "%degrees °C"
+    path = "/sys/class/thermal/thermal_zone0/temp"
+}
+
+battery 0 {
+    format = "%status %percentage (%remaining)"
+    format_down = "No battery"
+    status_unk = "UNK"
+    status_bat = "🔋"
+    status_full = "F"
+    status_chr = "C"
+    path = "/sys/class/power_supply/BAT%d/uevent"
+    low_threshold = 10
 }
 
 memory {

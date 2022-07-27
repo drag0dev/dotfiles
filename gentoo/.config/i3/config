@@ -188,9 +188,8 @@ bar {
 	status_command exec /home/drago/.config/i3status/net-speed.sh
 }
 for_window [class=".*"] border pixel 0
-gaps inner 8
-gaps outer 8
+gaps inner 4
+gaps outer 4
 
-exec picom --config .picom.conf &
-
+exec picom --config ~/.picom.conf &
 
