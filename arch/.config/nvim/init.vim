@@ -58,6 +58,7 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 
 Plug 'airblade/vim-gitgutter'
 
@@ -177,13 +178,7 @@ lua <<EOF
   require('lspconfig')["html"].setup {
     capabilities = capabilities
   }
-  require('lspconfig')["zk"].setup {
-    capabilities = capabilities
-  }
   require('lspconfig')["sqls"].setup {
-    capabilities = capabilities
-  }
-  require('lspconfig')["rust_analyzer"].setup {
     capabilities = capabilities
   }
   require('lspconfig')["elixirls"].setup {

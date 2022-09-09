@@ -1,6 +1,5 @@
 local lsp_installer = require "nvim-lsp-installer"
 local cmp = require("cmp")
-
 local servers = {
     "bashls",
     "pyright",
@@ -10,7 +9,6 @@ local servers = {
     "cssls",
     "dockerls",
     "html",
-    "zk",
     "sqls",
     "rust_analyzer",
 }
@@ -26,9 +24,10 @@ for _, name in pairs(servers) do
 end
 
 local source_mapping = {
-	buffer = "[Buffer]",
-	nvim_lsp = "[LSP]",
-	path = "[Path]",
+    buffer = "[Buffer]",
+    nvim_lsp = "[LSP]",
+    path = "[Path]",
+    cmp_tabnine = "[TN]",
 }
 
 cmp.setup({
@@ -43,8 +42,18 @@ cmp.setup({
     sources = {
         { name = "nvim_lsp" },
         { name = "buffer" },
+        { name = "cmp_tabnine" },
     }
 });
+
+local tabnine = require("cmp_tabnine.config")
+tabnine.setup({
+    max_lines = 1000,
+    max_num_results = 20,
+    sort = true,
+    run_on_every_keystroke = true,
+    snippet_placeholder = "..",
+})
 
 lsp_installer.on_server_ready(function(server)
   local opts = {
