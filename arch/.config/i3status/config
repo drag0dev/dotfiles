@@ -8,7 +8,7 @@
 
 general {
         colors = true
-        interval = 5
+        interval = 1
 	output_format = i3bar
 }
 
@@ -40,6 +40,6 @@ volume master {
 }
 
 cpu_usage{
-	format = "CPU %usage {%cpu0 %cpu1 %cpu2 %cpu3}"
+	format = "CPU %usage {%cpu0 %cpu1 %cpu2 %cpu3 %cpu4 %cpu5 %cpu6 %cpu7}"
 	max_threshold = 75
 }
