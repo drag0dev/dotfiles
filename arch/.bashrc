@@ -12,6 +12,7 @@ alias r="xplr"
 alias n="nvim"
 alias tmux="tmux -2"
 alias ls="exa"
+alias g="git"
 
 # bun
 export BUN_INSTALL="/home/drago/.bun"
