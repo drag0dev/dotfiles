@@ -32,7 +32,12 @@ nnoremap <leader>d :lua vim.lsp.buf.definition()<CR>
 nnoremap <leader>h :lua vim.lsp.buf.hover()<CR>
 nnoremap <leader>f :lua vim.diagnostic.open_float()<CR>
 nnoremap <leader>r :lua vim.lsp.buf.rename()<CR>
+nnoremap <leader>hs :split<CR>
+nnoremap <leader>vs :vsplit<CR>
 nmap [d <Plug>(GitGutterPreviewHunk)
+
+" disable auto foramtting for zig
+let g:zig_fmt_autosave = 0
 
 " show empty chars
 set listchars=trail:·
@@ -65,8 +70,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'simrat39/rust-tools.nvim'
 Plug 'mfussenegger/nvim-dap'
 
-" funny elixir stuff
+" languages
 Plug 'elixir-editors/vim-elixir'
+Plug 'ziglang/zig.vim'
 
 "snippets
 Plug 'rust-lang/rust.vim'
@@ -75,7 +81,7 @@ call plug#end()
 
 lua require("drago")
 
-colorscheme nord
+colorscheme gotham256
 syntax on
 filetype plugin indent on
 
@@ -183,6 +189,9 @@ lua <<EOF
   }
   require('lspconfig')["elixirls"].setup {
     cmd = {"/home/drago/.local/share/nvim/lsp_servers/elixir/elixir-ls/language_server.sh", "elixir-ls"},
+    capabilities = capabilities
+  }
+  require('lspconfig')["zls"].setup {
     capabilities = capabilities
   }
 EOF
