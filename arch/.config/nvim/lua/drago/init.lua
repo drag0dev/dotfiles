@@ -24,10 +24,9 @@ for _, name in pairs(servers) do
 end
 
 local source_mapping = {
-    buffer = "[Buffer]",
     nvim_lsp = "[LSP]",
-    path = "[Path]",
     cmp_tabnine = "[TN]",
+    buffer = "[Buffer]",
 }
 
 cmp.setup({
@@ -41,8 +40,8 @@ cmp.setup({
 
     sources = {
         { name = "nvim_lsp" },
-        { name = "buffer" },
         { name = "cmp_tabnine" },
+        { name = "buffer" },
     }
 });
 
