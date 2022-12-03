@@ -53,6 +53,10 @@ nnoremap <leader>sv :vsplit<CR>
 nmap [d <Plug>(GitGutterPreviewHunk)
 nmap [u <Plug>(GitGutterUndoHunk)
 
+" moves
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
 " disable auto foramtting for zig
 let g:zig_fmt_autosave = 0
 
@@ -66,6 +70,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'ThePrimeagen/harpoon'
+Plug 'tpope/vim-commentary'
 
 " lsp
 Plug 'neovim/nvim-lspconfig'
