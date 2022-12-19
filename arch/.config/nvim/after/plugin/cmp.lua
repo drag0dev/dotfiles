@@ -83,5 +83,4 @@ sources = cmp.config.sources({
 })
 })
 
--- snippets?
-require('rust-tools').setup({})
+require('rust-tools').setup({}) -- extra stuff for rust

@@ -99,6 +99,9 @@ Plug 'ziglang/zig.vim'
 Plug 'simrat39/rust-tools.nvim'
 Plug 'rust-lang/rust.vim'
 
+" snippets
+Plug 'rafamadriz/friendly-snippets'
+
 call plug#end()
 
 colorscheme gotham256
