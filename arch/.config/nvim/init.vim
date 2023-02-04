@@ -53,6 +53,7 @@ nnoremap <leader>sv :vsplit<CR>
 " git
 nmap [d <Plug>(GitGutterPreviewHunk)
 nmap [u <Plug>(GitGutterUndoHunk)
+nmap [a <Plug>(GitGutterStageHunk)
 
 " moves
 nnoremap <C-d> <C-d>zz
@@ -84,6 +85,7 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/vim-vsnip'
+Plug 'shurizzle/inlay-hints.nvim'
 " i guess you need a beefy cpu for tabnine
 " Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 
