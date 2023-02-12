@@ -59,6 +59,9 @@ nmap [a <Plug>(GitGutterStageHunk)
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 
+" open definition on the side
+nnoremap <leader>od :vsplit<CR> <C-w>L :lua vim.lsp.buf.definition()<CR>
+
 " disable auto foramtting for zig
 let g:zig_fmt_autosave = 0
 
