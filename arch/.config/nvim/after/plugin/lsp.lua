@@ -11,7 +11,7 @@ mason.setup {
 
 require("mason-lspconfig").setup {
     ensure_installed = {
-        "sumneko_lua",
+        "lua_ls",
         "vimls",
         "bashls",
         "pyright",
@@ -23,12 +23,13 @@ require("mason-lspconfig").setup {
         "html",
         "rust_analyzer",
         "zls",
+        "clojure_lsp",
     },
 }
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local lspconfig = require('lspconfig')
-lspconfig.sumneko_lua.setup { capabilities = capabilities }
+lspconfig.lua_ls.setup { capabilities = capabilities }
 lspconfig.vimls.setup { capabilities = capabilities }
 lspconfig.bashls.setup { capabilities = capabilities }
 lspconfig.pyright.setup { capabilities = capabilities }
@@ -44,3 +45,4 @@ lspconfig.elixirls.setup {
     cmd = {"/home/drago/.local/share/nvim/lsp_servers/elixir/elixir-ls/language_server.sh", "elixir-ls"},
     capabilities = capabilities
 }
+lspconfig.clojure_lsp.setup { capabilities = capabilities }
