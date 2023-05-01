@@ -42,7 +42,7 @@ lspconfig.html.setup { capabilities = capabilities }
 --lspconfig.rust_analyzer.setup { capabilities = capabilities }  rust-tools does this
 lspconfig.zls.setup { capabilities = capabilities }
 lspconfig.elixirls.setup {
-    cmd = {"/home/drago/.local/share/nvim/lsp_servers/elixir/elixir-ls/language_server.sh", "elixir-ls"},
+    cmd = {"/home/drago/.local/share/nvim/mason/packages/elixir-ls/language_server.sh", "elixir-ls"},
     capabilities = capabilities
 }
 lspconfig.clojure_lsp.setup { capabilities = capabilities }
