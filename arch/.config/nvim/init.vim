@@ -65,6 +65,9 @@ nnoremap <leader>od :vsplit<CR> <C-w>L :lua vim.lsp.buf.definition()<CR>
 " disable auto foramtting for zig
 let g:zig_fmt_autosave = 0
 
+" ocaml stuff
+set rtp+=home/drago/.opam/default/share/merlin/vim"
+
 call plug#begin('~/.vim/plugged')
 " colorschemes
 Plug 'whatyouhide/vim-gotham'
@@ -125,3 +128,9 @@ augroup DRAGO
 augroup END
 
 set completeopt=menu,menuone,noselect
+
+lua <<EOF
+    for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+      vim.api.nvim_set_hl(0, group, {})
+end
+EOF

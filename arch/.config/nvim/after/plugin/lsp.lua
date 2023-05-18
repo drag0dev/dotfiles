@@ -46,3 +46,4 @@ lspconfig.elixirls.setup {
     capabilities = capabilities
 }
 lspconfig.clojure_lsp.setup { capabilities = capabilities }
+lspconfig.ocamllsp.setup { capabilities = capabilities }
