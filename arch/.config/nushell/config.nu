@@ -173,16 +173,13 @@ let light_theme = {
 
 
 # The default config record. This is where much of your global configuration is setup.
-let-env config = {
+$env.config = {
   ls: {
     use_ls_colors: true # use the LS_COLORS environment variable to colorize output
     clickable_links: true # enable or disable clickable links. Your terminal has to support links.
   }
   rm: {
     always_trash: false # always act as if -t was given. Can be overridden with -p
-  }
-  cd: {
-    abbreviations: false # allows `cd s/o/f` to expand to `cd some/other/folder`
   }
   table: {
     mode: rounded # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
@@ -528,7 +525,11 @@ let-env config = {
   ]
 }
 
-let-env EDITOR = 'nvim'
-
+$env.EDITOR = 'nvim'
+$env.OPAM_SWITCH_PREFIX = '/home/drago/repos/temp/acc/_opam'
+$env.CAML_LD_LIBRARY_PATH = '/home/drago/repos/temp/acc/_opam/lib/stublibs:/home/drago/.opam/default/lib/ocaml/stublibs:/home/drago/.opam/default/lib/ocaml'
+$env.OCAML_TOPLEVEL_PATH = '/home/drago/repos/temp/acc/_opam/lib/toplevel'
+$env.MANPATH = ':/home/drago/exercism/ocaml/hello-world/_opam/man:/home/drago/repos/temp/acc/_opam/man'
+$env.PATH = '/home/drago/.cargo/bin:/home/drago/.bun/bin:/home/drago/.fly/bin:/home/drago/zls:/home/drago/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/home/drago/repos/temp/acc/_opam/bin:/home/drago/exercism/ocaml/hello-world/_opam/bin:/home/drago/.cargo/bin:/home/drago/.bun/bin:/home/drago/.fly/bin:/home/drago/zls:/home/drago/.cargo/bin:/home/drago/.bun/bin:/home/drago/.fly/bin:/home/drago/zls:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/drago/go/bin:/home/drago/vale'
 alias r = xplr
 alias n = nvim

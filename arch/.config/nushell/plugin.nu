@@ -15,7 +15,6 @@ register /home/drago/.cargo/bin/nu_plugin_gstat  {
       }
     ],
     "rest_positional": null,
-    "vectorizes_over_list": false,
     "named": [
       {
         "long": "help",
@@ -27,8 +26,6 @@ register /home/drago/.cargo/bin/nu_plugin_gstat  {
         "default_value": null
       }
     ],
-    "input_type": "Any",
-    "output_type": "Any",
     "input_output_types": [],
     "allow_variants_without_examples": false,
     "is_filter": false,
