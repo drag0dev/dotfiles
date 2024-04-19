@@ -1,0 +1,57 @@
+icons_format = "{icon}"
+
+[theme]
+theme = "space-villain"
+
+[icons]
+icons = "awesome6"
+
+[[block]]
+block = "net"
+device = "eno1"
+format = " $icon ↑$speed_up.eng(w:2) ↓$speed_down.eng(w:2)"
+
+[[block]]
+block = "nvidia_gpu"
+format = " $icon   $utilization $temperature"
+interval = 1
+
+[[block]]
+block = "temperature"
+format = "$icon $average"
+chip = "k10temp-pci-00c3"
+interval = 1
+
+[[block]]
+block = "cpu"
+info_cpu = 20
+warning_cpu = 50
+critical_cpu = 90
+format = " $icon $utilization1 $utilization2 $utilization3 $utilization4 $utilization5 $utilization6 $utilization7 $utilization8"
+interval = 1
+
+[[block]]
+block = "memory"
+format = " $icon $mem_used.eng(w:2) / $mem_total.eng(w:2) "
+interval = 1
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "available"
+alert_unit = "GB"
+warning = 20.0
+alert = 10.0
+format = "$icon  $available.eng(w:2)"
+interval = 20
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "time"
+format = "$timestamp.datetime(f:'%a %d/%m/%Y %H:%M:%S')"
+interval = 1
+[block.theme_overrides]
+idle_bg = "#4c046e"
+idle_fg = "#FFFFFF"
