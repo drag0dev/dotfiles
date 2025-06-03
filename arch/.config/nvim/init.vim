@@ -71,6 +71,8 @@ set rtp+=home/drago/.opam/default/share/merlin/vim"
 call plug#begin('~/.vim/plugged')
 " colorschemes
 Plug 'whatyouhide/vim-gotham'
+Plug 'sainnhe/everforest'
+Plug 'shaunsingh/moonlight.nvim'
 
 " tools
 Plug 'vim-airline/vim-airline'
@@ -118,7 +120,7 @@ Plug 'rafamadriz/friendly-snippets'
 
 call plug#end()
 
-colorscheme gotham256
+colorscheme everforest
 syntax on
 filetype plugin indent on
 

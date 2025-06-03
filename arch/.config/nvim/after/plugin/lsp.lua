@@ -1,3 +1,15 @@
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = '●',
+    source = "always",
+  },
+  underline = true,
+  severity_sort = true,
+  float = {
+    source = "always",
+  },
+})
+
 local mason = require("mason")
 mason.setup {
     ui = {
