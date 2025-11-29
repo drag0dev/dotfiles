@@ -82,5 +82,3 @@ sources = cmp.config.sources({
   { name = 'cmdline' }
 })
 })
-
-require('rust-tools').setup({}) -- extra stuff for rust

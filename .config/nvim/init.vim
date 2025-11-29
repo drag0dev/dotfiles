@@ -94,12 +94,8 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'shurizzle/inlay-hints.nvim'
-" i guess you need a beefy cpu for tabnine
-" Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
-" Plug 'Exafunction/codeium.vim'
 Plug 'sourcegraph/sg.nvim', { 'do': 'nvim -l build/init.lua' }
 Plug 'scalameta/nvim-metals'
-
 
 " git
 Plug 'airblade/vim-gitgutter'
@@ -110,10 +106,10 @@ Plug 'mfussenegger/nvim-dap'
 " languages
 Plug 'elixir-editors/vim-elixir'
 Plug 'ziglang/zig.vim'
-Plug 'simrat39/rust-tools.nvim'
 Plug 'rust-lang/rust.vim'
 Plug 'gleam-lang/gleam.vim'
 Plug 'jfecher/vale.vim'
+Plug 'mrcjkb/rustaceanvim'
 
 " snippets
 Plug 'rafamadriz/friendly-snippets'
