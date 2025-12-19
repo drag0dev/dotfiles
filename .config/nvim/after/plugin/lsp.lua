@@ -62,5 +62,11 @@ vim.lsp.enable("elixirls")
 vim.lsp.enable("clojure_lsp")
 vim.lsp.enable("bashls")
 vim.lsp.enable("coq_lsp")
-vim.lsp.enable("hls")
 vim.lsp.enable("ocamllsp")
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.rs",
+    callback = function()
+        vim.lsp.buf.format({ async = false})
+    end,
+})

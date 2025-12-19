@@ -110,6 +110,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'gleam-lang/gleam.vim'
 Plug 'jfecher/vale.vim'
 Plug 'mrcjkb/rustaceanvim'
+Plug 'MrcJkb/haskell-tools.nvim'
 
 " snippets
 Plug 'rafamadriz/friendly-snippets'
