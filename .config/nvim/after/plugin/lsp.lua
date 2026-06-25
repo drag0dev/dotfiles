@@ -33,7 +33,7 @@ require("mason-lspconfig").setup {
         "cssls",
         "dockerls",
         "html",
-        "rust_analyzer",
+        -- "rust_analyzer",
         "zls",
         "elixirls",
         "clojure_lsp",
