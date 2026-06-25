@@ -7,15 +7,8 @@
 
 alias ls='ls --color=auto'
 
-alias wet='curl wttr.in/Temerin'
-alias r="xplr"
 alias n="nvim"
 alias tmux="tmux -2"
-alias ls="exa"
-
-# bun
-export BUN_INSTALL="/home/drago/.bun"
-export PATH="$BUN_INSTALL/bin:/home/drago/.fly/bin:/home/drago/zls:$PATH"
 
 export EDITOR='nvim'
 export PS1="[\e[1;34m\u\e[m@\e[0;31m\h\e[m \W]\$ "
