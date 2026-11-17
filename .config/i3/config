@@ -184,7 +184,7 @@ bindsym $mod+r mode "resize"
 bar {
     status_command i3status-rs
     position top
-    font pango:FreeSansBold 13
+    font pango:FreeSansBold, Font Awesome 7 Free Solid 13
 }
 for_window [class=".*"] border pixel 0
 gaps inner 8

@@ -1,10 +1,10 @@
-icons_format = "{icon}"
+icons_format = "<span size='large'>{icon}</span>"
 
 [theme]
 theme = "space-villain"
 
 [icons]
-icons = "awesome6"
+icons = "material-nf"
 
 [[block]]
 block = "net"
@@ -13,8 +13,8 @@ format = " ↑$speed_up.eng(w:2) ↓$speed_down.eng(w:2)"
 interval = 1
 
 [[block]]
-block = "nvidia_gpu"
-format = " $icon   $utilization $temperature"
+block = "amd_gpu"
+format = " $icon $utilization $vram_used.eng(w:3,p:Gi) / $vram_total.eng(w:3,p:Gi)"
 interval = 1
 
 [[block]]
@@ -28,7 +28,7 @@ block = "cpu"
 info_cpu = 20
 warning_cpu = 50
 critical_cpu = 90
-format = " $utilization1 $utilization2 $utilization3 $utilization4 $utilization5 $utilization6 $utilization7 $utilization8"
+format = " $icon  $utilization1 $utilization2 $utilization3 $utilization4 $utilization5 $utilization6 $utilization7 $utilization8 $utilization9 $utilization10 $utilization11 $utilization12"
 interval = 1
 
 [[block]]
